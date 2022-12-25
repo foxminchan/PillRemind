@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_marginEnd="5dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/pill_add_edittext"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/edtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints=""
+            android:background="@null"
+            android:hint="@string/chon_thoi_gian"
+            android:inputType="time"
+            android:padding="0dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/pill_add_edittext"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/edtDose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints=""
+            android:background="@null"
+            android:hint="@string/chon_so_luong"
+            android:inputType="number"
+            android:padding="0dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+</LinearLayout>

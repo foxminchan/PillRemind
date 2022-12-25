@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/foam"
+    android:orientation="vertical"
+    tools:context=".view.PillActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/back_icon"
+            android:src="@drawable/violet_back_ic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/edit_pill"
+            android:textColor="@color/electric_violet"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:id="@+id/ocr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/ocr_icon"
+            android:src="@drawable/ocr_ic" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/pill_name"
+                android:textColor="@color/denim"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/pill_add_edittext">
+
+                <EditText
+                    android:id="@+id/edtPillname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:autofillHints=""
+                    android:background="@null"
+                    android:hint="@string/pill_name_add"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/decripstion"
+                android:textColor="@color/denim"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/pill_add_edittext">
+
+                <EditText
+                    android:id="@+id/edtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:autofillHints=""
+                    android:background="@null"
+                    android:hint="@string/decripstion"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/duration"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/pill_add_edittext">
+
+                        <EditText
+                            android:id="@+id/edtStartDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:autofillHints=""
+                            android:background="@null"
+                            android:hint="@string/startDay"
+                            android:inputType="date"
+                            android:padding="0dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/pill_add_edittext">
+
+                        <EditText
+                            android:id="@+id/edtEndDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:autofillHints=""
+                            android:background="@null"
+                            android:hint="@string/endDay"
+                            android:inputType="date"
+                            android:padding="0dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/thoi_diem_uong"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spMeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:contentDescription="@string/chon_thoi_diem"
+                        android:tooltipText="@string/chon_thoi_diem"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <ImageView
+                        android:id="@+id/imgPill"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/add_image"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ImageContrastCheck" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btnAddPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:autofillHints=""
+                    android:background="@null"
+                    android:hint="@string/add_image"
+                    android:padding="0dp"
+                    android:textColorHint="@color/white"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/strength"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/pill_add_edittext">
+
+                        <EditText
+                            android:id="@+id/edtStrength"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:autofillHints=""
+                            android:background="@null"
+                            android:hint="@string/strength_add"
+                            android:inputType="number"
+                            android:padding="0dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/pill_add_edittext">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spUnit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/unit"
+                            android:tooltipText="@string/unit"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/frequency"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spFrequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:contentDescription="@string/choose_frecency"
+                        android:tooltipText="@string/choose_frecency"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/hideWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/warming_reminder"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnTimes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/how_times"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <EditText
+                        android:id="@+id/edtTimes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:autofillHints=""
+                        android:background="@null"
+                        android:hint="@string/how_times_des"
+                        android:inputType="number"
+                        android:padding="0dp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnOften"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/how_often"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <EditText
+                        android:id="@+id/edtOften"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:autofillHints=""
+                        android:background="@null"
+                        android:hint="@string/often"
+                        android:inputType="number"
+                        android:padding="0dp"
+                        android:text="@string/_1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnDuration"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/time_and_dose"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:id="@+id/lvTimeAndDose"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    tools:ignore="NestedScrolling" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/choose_day"
+                    android:textColor="@color/denim"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pill_add_edittext">
+
+                    <LinearLayout
+                        android:id="@+id/lnMonday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Monday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckMonday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnTuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/lnMonday"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Tuesday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckTuesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnWednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/lnTuesday"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Wednesday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckWednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnThursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/lnWednesday"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Thursday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckThursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnFriday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/lnThursday"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Friday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckFriday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnSaturday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/lnFriday"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Saturday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckSaturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/lnSunday"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_below="@+id/lnSaturday"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        tools:ignore="UselessParent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:text="@string/Sunday"
+                            android:textColor="@color/black"
+                            android:layout_weight="3"/>
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/ckSunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:buttonTint="@color/denim"
+                            android:layout_weight="0"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:text="@string/pill_update"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
