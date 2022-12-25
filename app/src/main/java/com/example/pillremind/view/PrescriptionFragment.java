@@ -19,6 +19,7 @@ public class PrescriptionFragment extends Fragment {
 
     }
 
+    @NonNull
     public static PrescriptionFragment newInstance(String param1, String param2) {
         PrescriptionFragment fragment = new PrescriptionFragment();
         Bundle args = new Bundle();
@@ -32,7 +33,7 @@ public class PrescriptionFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_prescription, container, false);
     }

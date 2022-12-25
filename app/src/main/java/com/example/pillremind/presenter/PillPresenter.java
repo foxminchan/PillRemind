@@ -2,6 +2,8 @@ package com.example.pillremind.presenter;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.pillremind.model.domain.PillItem;
 import com.example.pillremind.presenter.base.IPill;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,7 +39,7 @@ public class PillPresenter implements IPill.Presenter {
         });
     }
 
-    public void deletePill(PillItem pillItem) {
+    public void deletePill(@NonNull PillItem pillItem) {
         FirebaseDatabase.getInstance().getReference(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).child("User").child("Pill").child(pillItem.getPillName()).removeValue();
     }
 }

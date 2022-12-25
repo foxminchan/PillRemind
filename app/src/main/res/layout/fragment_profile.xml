@@ -291,11 +291,13 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        android:src="@drawable/getin_ic"
                         android:contentDescription="@string/verify_phone_number"
                         android:padding="12dp" />
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rlChangePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"

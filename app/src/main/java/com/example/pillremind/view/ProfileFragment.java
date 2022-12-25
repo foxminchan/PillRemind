@@ -39,6 +39,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
     private SharedPreferences sharedPreferences;
     private ImageView ivVerifyPhoneNumber;
     private RelativeLayout rlVerifyPhoneNumber;
+    private RelativeLayout rlChangePassword;
 
     public ProfileFragment() {
 
@@ -70,7 +71,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
         profilePresenter.getVerifyPhoneSatus();
     }
 
-    public void init(View view) {
+    public void init(@NonNull View view) {
         rlVersion = view.findViewById(R.id.rlVersion);
         rlDeleteAccount = view.findViewById(R.id.rlDeleteAccount);
         btnLogout = view.findViewById(R.id.btnLogout);
@@ -83,6 +84,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
         rlContactUs = view.findViewById(R.id.rlContactUs);
         rlSocialMedia = view.findViewById(R.id.rlLinkSocialAccount);
         rlVerifyPhoneNumber = view.findViewById(R.id.rlVerifyPhone);
+        rlChangePassword = view.findViewById(R.id.rlChangePassword);
     }
 
     public void registerListener() {
@@ -94,6 +96,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
         rlTerms.setOnClickListener(this);
         rlContactUs.setOnClickListener(this);
         rlSocialMedia.setOnClickListener(this);
+        rlVerifyPhoneNumber.setOnClickListener(this);
+        rlChangePassword.setOnClickListener(this);
     }
 
     public void initPresenter() {
@@ -101,7 +105,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(@NonNull View v) {
         if (v.getId() == rlVersion.getId()) {
             Toast.makeText(getContext(), "v1.0.00", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == btnLogout.getId()) {
@@ -125,13 +129,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, I
         } else if (v.getId() == rlSocialMedia.getId()) {
             Toast.makeText(getContext(), "Chức năng đang được phát triển", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == rlVerifyPhoneNumber.getId()) {
-            if (ivVerifyPhoneNumber.getDrawable() == null) {
-                ivVerifyPhoneNumber.setEnabled(false);
-            } else if (ivVerifyPhoneNumber.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.check_ic).getConstantState())) {
-                Toast.makeText(getContext(), "Số điện thoại đã xác thực", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getContext(), "Chức năng đang được phát triển", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(getContext(), "Chức năng đang được phát triển", Toast.LENGTH_SHORT).show();
+        } else if (v.getId() == rlChangePassword.getId()) {
+            Intent intent = new Intent(getContext(), ChangePasswordActivity.class);
+            startActivity(intent);
         }
     }
 

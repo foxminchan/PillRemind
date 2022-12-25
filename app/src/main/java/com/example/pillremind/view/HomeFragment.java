@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
 
     }
 
+    @NonNull
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
@@ -65,7 +66,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -83,7 +84,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
         }
     }
 
-    public void init(View view) {
+    public void init(@NonNull View view) {
         userName = view.findViewById(R.id.username);
         lnEmergency = view.findViewById(R.id.lnEmergency);
         lnDrugStore = view.findViewById(R.id.lnDrugStore);
@@ -101,7 +102,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(@NonNull View v) {
         if (v.getId() == lnEmergency.getId()) {
             requestPermissionLauncher.launch(android.Manifest.permission.CALL_PHONE);
         } else if (v.getId() == lnDrugStore.getId()) {
