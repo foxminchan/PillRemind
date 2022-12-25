@@ -24,7 +24,7 @@
     <string name="meds">Đơn thuốc</string>
     <string name="pill_schedule">Lịch uống thuốc</string>
     <string name="profile">Tài khoản</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="api_maps">AIzaSyBEPUWHDmrlEyimyDeVOGOZmiqt_W7ePOQ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="or">HOẶC</string>
     <string name="facebook_icon">Facebook icon</string>
@@ -106,4 +106,5 @@
     <string name="delete">Xoá</string>
     <string name="edit_pill">Chỉnh sửa lịch uống thuốc</string>
     <string name="pill_update">Cập nhật</string>
+    <string name="title_activity_hospital">HospitalActivity</string>
 </resources>

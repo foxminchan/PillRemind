@@ -3,8 +3,10 @@ package com.example.pillremind.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +36,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
     private TextView userName;
     private LinearLayout lnEmergency;
     private LinearLayout lnDrugStore;
+    private LinearLayout lnHospital;
     private HomePresenter homePresenter;
     private SharedPreferences sharedPreferences;
 
@@ -84,11 +87,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
         userName = view.findViewById(R.id.username);
         lnEmergency = view.findViewById(R.id.lnEmergency);
         lnDrugStore = view.findViewById(R.id.lnDrugStore);
+        lnHospital = view.findViewById(R.id.lnHospital);
     }
 
     public void registerListener() {
         lnEmergency.setOnClickListener(this);
         lnDrugStore.setOnClickListener(this);
+        lnHospital.setOnClickListener(this);
     }
 
     public void initPresenter() {
@@ -100,8 +105,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
         if (v.getId() == lnEmergency.getId()) {
             requestPermissionLauncher.launch(android.Manifest.permission.CALL_PHONE);
         } else if (v.getId() == lnDrugStore.getId()) {
+            try {
+                if (getContext().checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(getContext(), DrugStoreActivity.class);
+                    startActivity(intent);
+                } else {
+                    requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                }
+            } catch (Exception e) {
+                Log.e("ErrorDD", e.getMessage());
+            }
+        } else if (v.getId() == lnHospital.getId()) {
+            try {
+                if (getContext().checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(getContext(), HospitalActivity.class);
+                    startActivity(intent);
+                } else {
+                    requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                }
+            } catch (Exception e) {
+                Log.e("ErrorDD", e.getMessage());
+            }
         }
     }
+
 
     @Override
     public void onGetCurrentUserResult(String name) {
