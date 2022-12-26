@@ -64,10 +64,9 @@ import java.util.Objects;
 public class PillActivity extends AppCompatActivity implements android.view.View.OnClickListener, IPillAdding.View {
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     private static final int MY_NOTIFICATION_PERMISSION_CODE = 101;
-    public static Context context;
     private final String[] unitArray = {"mg", "ml", "g", "mg/ml", "mg/g", "ml/g", "ml/ml", "g/g", "g/ml", "g/mg", "ml/mg", "ml/ml"};
     private final String[] frequency = {"Khi cần thiết", "Hằng ngày", "Ngày cụ thể", "Khoảng thời gian cụ thể"};
-    private final String[] time = {"Trước khi ăn", "Sau khi ăn", "Trước khi ngủ", "Sau khi ngủ"};
+    private final String[] time = {"Trước khi ăn", "Sau khi ăn", "Trước khi ngủ"};
     private PillAddingPresenter pillPresenter;
     private EditText edtTimes;
     private EditText edtName;
@@ -329,7 +328,7 @@ public class PillActivity extends AppCompatActivity implements android.view.View
         } else if (v.getId() == btnOcr.getId()) {
             Toast.makeText(this, "Tính năng đang phát triển", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == btnSave.getId() && validate()) {
-            if(checkSelfPermission(Manifest.permission.ACCESS_NOTIFICATION_POLICY) != PackageManager.PERMISSION_GRANTED) {
+            if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_NOTIFICATION_POLICY)) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_NOTIFICATION_POLICY}, MY_NOTIFICATION_PERMISSION_CODE);
             } else {
                 savingEvent();

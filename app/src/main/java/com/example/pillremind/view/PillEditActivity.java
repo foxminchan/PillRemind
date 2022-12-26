@@ -66,7 +66,7 @@ public class PillEditActivity extends AppCompatActivity implements View.OnClickL
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     private final String[] unitArray = {"mg", "ml", "g", "mg/ml", "mg/g", "ml/g", "ml/ml", "g/g", "g/ml", "g/mg", "ml/mg", "ml/ml"};
     private final String[] frequency = {"Khi cần thiết", "Hằng ngày", "Ngày cụ thể", "Khoảng thời gian cụ thể"};
-    private final String[] time = {"Trước khi ăn", "Sau khi ăn", "Trước khi ngủ", "Sau khi ngủ"};
+    private final String[] time = {"Trước khi ăn", "Sau khi ăn", "Trước khi ngủ"};
     private EditText edtTimes;
     private EditText edtName;
     private EditText edtDescription;

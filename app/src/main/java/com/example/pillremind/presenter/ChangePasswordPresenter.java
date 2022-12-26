@@ -22,7 +22,7 @@ public class ChangePasswordPresenter implements IChangePassword.Presenter {
                         auth.getCurrentUser().updatePassword(confirmPassword)
                                 .addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
-                                        FirebaseDatabase.getInstance().getReference(auth.getCurrentUser().getUid()).child("Users").child("password").setValue(BCrypt.hashpw(confirmPassword, BCrypt.gensalt())).addOnCompleteListener(task2 -> {
+                                        FirebaseDatabase.getInstance().getReference(auth.getCurrentUser().getUid()).child("User").child("password").setValue(BCrypt.hashpw(confirmPassword, BCrypt.gensalt())).addOnCompleteListener(task2 -> {
                                             if (task2.isSuccessful()) {
                                                 view.showSuccessMessage("Đổi mật khẩu thành công");
                                             } else {

@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
     private LinearLayout lnEmergency;
     private LinearLayout lnDrugStore;
     private LinearLayout lnHospital;
+    private LinearLayout lnDonate;
     private HomePresenter homePresenter;
     private SharedPreferences sharedPreferences;
 
@@ -89,12 +90,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
         lnEmergency = view.findViewById(R.id.lnEmergency);
         lnDrugStore = view.findViewById(R.id.lnDrugStore);
         lnHospital = view.findViewById(R.id.lnHospital);
+        lnDonate = view.findViewById(R.id.lnDonation);
     }
 
     public void registerListener() {
         lnEmergency.setOnClickListener(this);
         lnDrugStore.setOnClickListener(this);
         lnHospital.setOnClickListener(this);
+        lnDonate.setOnClickListener(this);
     }
 
     public void initPresenter() {
@@ -127,6 +130,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, IHom
             } catch (Exception e) {
                 Log.e("ErrorDD", e.getMessage());
             }
+        } else if (v.getId() == lnDonate.getId()) {
+            Toast.makeText(getContext(), "Chức năng đang được phát triển", Toast.LENGTH_SHORT).show();
         }
     }
 

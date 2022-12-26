@@ -11,13 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 public class AlarmReceiver extends BroadcastReceiver {
-    private String CHANNEL_ID = "201";
     @Override
     public void onReceive(Context context, @NonNull Intent intent) {
         String pillName = intent.getStringExtra("content");
         Log.d("AlarmReceiver", "onReceive: " + pillName);
         try {
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            final String CHANNEL_ID = "201";
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Channel 1", NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription("Đã đến giờ uống thuốc");
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
